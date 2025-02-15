@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-parchment: #F5E6D3;
+  --color-antique-brown: #2C1810;
+  --color-gold: #B8860B;
+}
+
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-antique-brown);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.baroque-border {
+  position: relative;
+}
+
+.baroque-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    45deg,
+    var(--color-gold) 0%,
+    transparent 40%,
+    transparent 60%,
+    var(--color-gold) 100%
+  );
+  opacity: 0.3;
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.feature-card {
+  background: linear-gradient(145deg, rgba(245, 230, 211, 0.9), rgba(245, 230, 211, 0.7));
+  backdrop-filter: blur(8px);
+}
+
+.shadow-ornate {
+  box-shadow: 
+    0 4px 20px -2px rgba(44, 24, 16, 0.15),
+    0 0 0 1px rgba(184, 134, 11, 0.1);
+}
+
+.hero-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 0%, var(--color-parchment) 100%);
+  opacity: 0.7;
+}
+
+.btn-dive {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.btn-dive::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-antique-brown);
+  z-index: -1;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.btn-dive:hover::before {
+  transform: scale(1.05);
+}
+
+.btn-dive.expanding::before {
+  transform: scale(100);
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-dive span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-dive:hover span {
+  transform: scale(1.05);
+}
+
+.btn-dive.expanding span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
