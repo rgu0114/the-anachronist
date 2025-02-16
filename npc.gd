@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 var move_speed = 2.0
-var rotation_speed = 2.0
+var rotation_speed = 2.0	
 var change_direction_time = 3.0  # Time before changing direction
 var timer = 0.0
 var current_direction = Vector3.ZERO
