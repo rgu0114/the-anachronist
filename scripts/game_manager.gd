@@ -55,7 +55,7 @@ func enter_new_dialogue (npc):
 	current_npc = npc
 	messages = []
 	dialogue_box.visible = true
-	dialogue_box.initialize_with_npc(npc)
+	dialogue_box.initialize_with_npc(current_npc)
 	dialogue_request("")
 # called when we stop talking with an NPC
 func exit_dialogue ():

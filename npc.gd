@@ -1,16 +1,15 @@
 extends CharacterBody3D
+class_name NPC 
 
 @export var icon : Texture
-@export_multiline var physical_description : String
-@export_multiline var location_description : String
-@export_multiline var personality : String
-@export_multiline var secret_knowledge : String
+@export var character: String
+@export_multiline var prompt : String
 
 signal player_entered_range
 signal player_exited_range
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-var move_speed = 2.0
+var move_speed = 0.0
 var rotation_speed = 2.0	
 var change_direction_time = 3.0  # Time before changing direction
 var timer = 0.0
@@ -77,7 +76,7 @@ func _process(delta: float) -> void:
 		timer = 0.0
 	
 	# Move in current direction
-	global_translate(current_direction * move_speed * delta)
+	#global_translate(current_direction * move_speed * delta)
 	
 	# Rotate to face movement direction
 	if current_direction != Vector3.ZERO:
