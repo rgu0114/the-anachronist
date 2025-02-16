@@ -1,5 +1,11 @@
 extends CharacterBody3D
 
+@export var icon : Texture
+@export_multiline var physical_description : String
+@export_multiline var location_description : String
+@export_multiline var personality : String
+@export_multiline var secret_knowledge : String
+
 signal player_entered_range
 signal player_exited_range
 
