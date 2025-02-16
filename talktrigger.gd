@@ -13,11 +13,13 @@ func _on_body_exited(body):
 		current_npc = null
 # called when an input is detected
 func _input(event):
-	print("I am in event")
+	#print("I am in event")
 	# did we press F and we are currently not in dialogue?
+	#print(game_manager.is_dialogue_active())
 	if Input.is_key_pressed(KEY_F) and game_manager.is_dialogue_active() == false:
-		
 	#if we have a current NPC, enter into dialogue with them
 		if current_npc != null:
 			print("current npc is not null")
 			game_manager.enter_new_dialogue(current_npc)
+			current_npc.stop_animation()
+			  # Stop movement

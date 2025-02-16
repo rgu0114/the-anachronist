@@ -53,9 +53,11 @@ var current_npc = null;
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
+@onready var dialogue_box = get_node("/root/Main/CanvasLayer/DialogueBox")
 
 func _ready() -> void:
 	add_to_group("player")
+	dialogue_box.visible = false
 	print("reached ready")
 	check_input_mappings()
 	look_rotation.y = rotation.y
