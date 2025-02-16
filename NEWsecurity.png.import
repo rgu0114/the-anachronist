@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs43xyryv8yw7"
-path.s3tc="res://.godot/imported/sand.jpg-9328ef0a35fa6878f864a040b4268e32.s3tc.ctex"
+uid="uid://dr1na7n15v0ih"
+path.s3tc="res://.godot/imported/NEWsecurity.png-8bc7529768d6b1707d3de0c1d235a572.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sand.jpg"
-dest_files=["res://.godot/imported/sand.jpg-9328ef0a35fa6878f864a040b4268e32.s3tc.ctex"]
+source_file="res://NEWsecurity.png"
+dest_files=["res://.godot/imported/NEWsecurity.png-8bc7529768d6b1707d3de0c1d235a572.s3tc.ctex"]
 
 [params]
 

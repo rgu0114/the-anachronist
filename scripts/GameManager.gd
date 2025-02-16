@@ -56,7 +56,7 @@ func _on_request_completed (result, response_code, headers, body):
 	var message = response["choices"][0]["message"]["content"]
 	messages.append({
 	"role": "assistant",
-	"content": message
+	"content": messages
 	})
 	on_npc_talk.emit(message)
 # called when we begin talking with an NPC
@@ -68,6 +68,7 @@ func enter_new_dialogue (npc):
 	dialogue_request("")
 # called when we stop talking with an NPC
 func exit_dialogue ():
+	current_npc.start_animation()
 	current_npc = null
 	messages = []
 	dialogue_box.visible = false

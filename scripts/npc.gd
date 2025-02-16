@@ -49,6 +49,11 @@ func _process(delta: float) -> void:
 		# Smoothly interpolate rotation
 		rotation.y = lerp_angle(current_rotation, target_rotation, rotation_speed * delta)
 
+func _on_body_entered(body):
+	if body is StaticBody3D:
+		current_direction = -current_direction
+		timer = change_direction_time
+
 func change_direction() -> void:
 	# Generate random angle between 0 and 2π
 	var random_angle = randf_range(0, PI * 2)

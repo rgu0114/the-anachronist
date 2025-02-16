@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs43xyryv8yw7"
-path.s3tc="res://.godot/imported/sand.jpg-9328ef0a35fa6878f864a040b4268e32.s3tc.ctex"
+uid="uid://dol7x6pcl7xuo"
+path.s3tc="res://.godot/imported/NEWgirl.png-1dd90cd9196d342473b0b0f53aece493.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sand.jpg"
-dest_files=["res://.godot/imported/sand.jpg-9328ef0a35fa6878f864a040b4268e32.s3tc.ctex"]
+source_file="res://NEWgirl.png"
+dest_files=["res://.godot/imported/NEWgirl.png-1dd90cd9196d342473b0b0f53aece493.s3tc.ctex"]
 
 [params]
 
