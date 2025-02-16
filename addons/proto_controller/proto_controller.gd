@@ -48,16 +48,38 @@ var mouse_captured : bool = false
 var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
+var current_npc = null;
 
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
 
 func _ready() -> void:
+	add_to_group("player")
+	print("reached ready")
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
+	
+	#print("number of npcs: ", get_tree().get_nodes_in_group("npcs").size())
+	#for npc in get_tree().get_nodes_in_group("npcs"):
+		#print("binding to: ", npc)
+		#npc.player_entered_range.connect(_on_npc_range_entered.bind(npc))
+		#npc.player_exited_range.connect(_on_npc_range_exited.bind(npc))
 
+func _on_npc_range_entered(npc):
+	print("Player can now interact with: ", npc.name)  
+	current_npc = npc
+
+func _on_npc_range_exited(npc):
+	if current_npc == npc:
+		current_npc = null
+
+func _input(event):
+	if event.is_action_pressed("interact") and current_npc:
+		# Handle interaction with current_npc
+		print("Interacting with: ", current_npc.name)
+		
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse capturing
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):

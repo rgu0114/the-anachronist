@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bneq3ceoohshv"]
+[gd_scene load_steps=6 format=3 uid="uid://bneq3ceoohshv"]
 
 [ext_resource type="Script" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
 
@@ -12,6 +12,8 @@ height = 1.8
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
 radius = 0.4
 height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vwhw3"]
 
 [node name="ProtoController" type="CharacterBody3D"]
 script = ExtResource("1_ucva2")
@@ -30,3 +32,6 @@ shape = SubResource("CapsuleShape3D_iof21")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_vwhw3")
