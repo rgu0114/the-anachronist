@@ -1,4 +1,4 @@
-extends Area2D
+extends Area3D
 @onready var game_manager = get_node("/root/Main/GameManager")
 var current_npc
 # called when a body enters our collider
